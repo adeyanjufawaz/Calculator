@@ -1,5 +1,6 @@
 let screen = document.querySelector(".screen")
 
+
 const buttons = Array.from(document.querySelectorAll("button"))
 buttons.map(cur=>{
     cur.addEventListener('click', (e) => {
@@ -11,8 +12,7 @@ buttons.map(cur=>{
                 if (screen.innerText) {
                     screen.innerText = screen.innerText.slice(0,-1)   
                 }
-                break;
-            
+                break; 
             case "=":
                 try {
                     screen.innerText = eval(screen.innerText)
