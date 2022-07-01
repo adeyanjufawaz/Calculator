@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', serif;
+    font-weight: normal;
+}
+body{
+    background: linear-gradient(to right, #00AAFF, #00FF6c);
+}
+.calculator{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4,85px);
+    grid-template-rows: minmax(100px,auto) repeat(5,85px);
+}
+.calculator > button{
+    cursor: pointer;
+    font-size:2rem;
+    outline: none;
+    border: 1px solid #fff;
+    background: rgba(225, 225, 225, .75);
+}
+.calculator > button:hover{
+    background: rgba(225, 225, 225, .95);
+}
+.span--two{
+    grid-column: span 2;
+}
+.screen{
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, .757);
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    font-size:2rem;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.screen .prev-operand{
+    font-size: 1.5rem;
+    color: rgba(225, 225, 225, .75);
+}
+.screen .next-operand{
+    color: white;
+    font-size: 2.5rem;
+}
