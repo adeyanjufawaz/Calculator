@@ -1,10 +1,14 @@
 let screen = document.querySelector(".screen")
 
 
+
 const buttons = Array.from(document.querySelectorAll("button"))
-buttons.map(cur=>{
-    cur.addEventListener('click', (e) => {
-        switch (e.target.innerText) {
+buttons.map( cur => {
+    cur.addEventListener('click', (button) => {
+            if (screen.innerText.length > 1 && screen.innerText[1] !== "." && screen.innerText.startsWith('0')) {
+                screen.innerText = screen.innerText.slice(-(screen.innerText.length) + 1)
+            }
+        switch (button.target.innerText) {
             case "AC":
                 screen.innerText = ''
                 break;
@@ -21,9 +25,11 @@ buttons.map(cur=>{
                 }
                 break;
             default:
-                screen.innerText += e.target.innerText
+                screen.innerText += button.target.innerText
                 break;
         }
     })
 })
+
+
 
